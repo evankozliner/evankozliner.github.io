@@ -1,0 +1,449 @@
+body {
+    margin: 0 1em 2em 1em;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    font-size: 1.1em;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    z-index: 2;
+    top: 0;
+    padding-top: 1em;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 2em;
+    padding-bottom: 1em;
+    color: black;
+    background-color: white;
+}
+#logo {
+    margin: 0;
+    font-size: 1.5em;
+}
+#hamburger {
+    display: block;
+    height: 2em;
+    background: none;
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: right;
+}
+.subscribe {
+    border: none;
+    border-radius: 5px;
+    padding: .5em 1em .5em 1em;
+    background-color: rgb(127, 245, 127);
+}
+header ul {
+    display: none;
+    z-index: 2;
+    flex-direction: row;
+
+}
+header ul a {
+    color: black;
+    text-decoration: none;
+    margin: .5em 2em .5em 2em;
+}
+header ul a:hover {
+    text-decoration:underline;
+}
+img.rounded {
+    border-radius: 50%;
+}
+nav {
+    display: flex;
+    transition: height .3s ease;
+    position: sticky;
+    z-index: 2;
+    flex-direction: column;
+    top: 4em;
+    width: 100%;
+    height: 0%;
+    border-top: 2px solid black;
+    border-bottom: 2px solid;
+    background-color: white;
+}
+nav .mlinks {visibility: hidden;}
+nav button {
+    font-size: 1em;
+    background: none;
+    border: none;
+}
+nav a, nav button {
+    width: fit-content;
+    margin: 1em 0 0 0;
+    padding: .2em;
+}
+.block {
+    margin-top: 2em;
+    padding: 1em;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.main {
+    background: black;
+    color: white;
+}
+.txt {
+    max-width: 75%;
+}
+.main .txt h1 {
+    font-size: 3.5em;
+    margin-bottom: .5em;
+}
+.main .txt h2 {
+    font-weight: normal;
+    font-size: 1.2em
+}
+.typeform-button button {
+    display: inline-block !important;
+    position: relative !important;
+    color:white !important;
+    background: none !important;
+    line-height: normal !important;
+    border-radius: 0px !important;
+    padding: 0 !important;
+    height: 22px !important;
+}
+.typeform-button button:after {
+  content: '' !important;
+  position: absolute !important;
+  width: 100% !important;
+  transform: scaleX(0) !important;
+  height: 2px !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background-color: white !important;
+  transform-origin: bottom right !important;
+  transition: transform 0.25s ease-out !important;
+}
+.typeform-button button:hover:after {
+    transform: scaleX(1) !important;
+    transform-origin: bottom left !important;
+}
+.main .txt2 h2 {
+    display: flex;
+    width: fit-content;
+    border-radius: 5px;
+    padding: .2em .8em .35em .8em;
+    background-color: rgb(93, 93, 255);
+    filter: drop-shadow(6px 6px 0 white)
+}
+.nav-tf-btn {
+
+}
+.main .txt2 h2:hover {background-color: rgb(24, 24, 189);}
+.main .txt2 h2 a {
+    color: white;
+}
+.main .txt2 h2 img {
+    width: 12px;
+    margin: 0 0 .15em .1em;
+}
+.main .report {
+    display: flex;
+    grid-area: report;
+    overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .report .reportWrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.main .report img {
+    width: 100%;
+}
+.main .report aside {
+    display: flex;
+    flex-direction: row;
+    margin-top: .7em;
+}
+.main .report aside img {
+    height: 15px;
+    margin: 0 .35em 0 .35em;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.quote {
+    display: flex;
+    overflow-x: hidden;
+    padding: 1em 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.qt {
+    max-width: 1100px;
+    width: 90vw;
+}
+.quoteWrapper {
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 0.5s ease-in-out;
+}
+.quote .quoteWrapper .qt article h2 {
+    text-align: center;
+}
+.quote .quoteWrapper .qt .quotedecoration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote .quoteWrapper .qt .quotedecoration img {
+    width: 250px;
+    margin: 2em 0;
+}
+.quote .quoteWrapper .qt .quoteauthor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content:center;
+    align-items: center;
+}
+.qt article h2, .faq h2, .about h2, .howitworks h2 {
+    font-size: 2em;
+}
+.quote .quoteWrapper .qt .quoteauthor img {
+    width: 70px;
+    height: 70px;
+    margin-right: 1em;
+}
+.quote .quoteWrapper .qt .quoteauthor p {
+    text-align: right;
+    font-size: 1.2em;
+}
+.quoteauthor p i {
+    font-size: .8em;
+    margin-left: .2em;
+}
+.howitworks {
+    background-color: rgb(197, 197, 255);
+}
+.howitworks article h3 {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.howitworks article h3 .num {
+    margin-right: .7em;
+}
+.howitworks article h3 .emoji {
+    margin-left: 10%;
+    width: 70px;
+}
+.howitworks .btmbtn {
+    display: flex;
+    border: none;
+    background-color: rgb(93, 93, 255);
+    filter: drop-shadow(6px 6px 0 black);
+    padding: .4em 1.2em .4em 1.2em;
+    border-radius: 5px;
+}
+.btmbtn:active {filter: none;}
+.btmbtn:hover {background-color: rgb(24, 24, 189);}
+.howitworks .btmbtn img {
+    width: 12px;
+    margin: 0 0 .15em .1em;
+}
+/*
+.main .report .rhead{
+    display: flex;
+    z-index: 0;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em;
+    padding: 1em;
+    color: black;
+    filter: drop-shadow(10px 10px 0 white);
+    background-color: rgb(255, 235, 181);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.main .report .rbody {
+    color: black;
+    filter: drop-shadow(10px 10px 0 white);
+    background-color: rgb(255, 235, 181);
+    border: 1px solid black;
+    border-radius: 5px;
+} */
+.aboutCarosel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.aboutCarosel h3 {
+    margin-bottom: 0;
+}
+.aboutCarosel p {
+    margin-top: .5em;
+}
+.aboutCarosel img {
+    width: 100px;
+    height: 100px;
+    margin-right: 1em;
+}
+.faq div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq div p {
+    margin: 1em;
+}
+.faq article p a {
+    color: black;
+}
+.faq article {
+    height: fit-content;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.faq article span {
+    display: flex;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.faq article span h4 {
+    font-weight: medium;
+    margin: .5em;
+}
+.faq article span img {
+    width: 15px;
+    height: 30px;
+    transition: transform .2s linear;
+}
+.faq article p {
+    display: none;
+    margin-left: .5em;
+}
+
+.top-quote > p {
+    margin-top: 0.5em;
+}
+
+.top-quote > p > b {
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.logo-img {
+    max-height: 35px;
+}
+
+.left-element {
+    display : flex;
+}
+
+h1#logo {
+    margin-left: 20px;
+}
+
+.bottom-quote {
+    display: flex;
+    justify-content: center;
+}
+
+.main .txt h1 {
+    font-size: 3.5em;
+    margin-bottom: .5em;
+}
+@media (max-width: 576px) {
+    /* Mobile devices */
+    .main .txt h1 {
+        font-size: 2.5em;
+        margin-bottom: .5em;
+    }
+
+}
+@media (min-width: 750px) {
+    body {
+        margin: 0 2em 2em 2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+        display: grid;
+        justify-items:center;
+        justify-content: center;
+        grid-template-areas: 
+                        "main main"
+                        "quote quote"
+                        "howitworks about"
+                        "howitworks faq";
+        
+    }
+    #hamburger {
+        display: none;
+    }
+    .subscribe {margin: 0.5em 2em 0.5em 2em;}
+    nav {
+        display: none;
+    }
+    header {
+        max-width: 1180px;
+        margin: auto;
+    }
+    header ul {
+        display: flex;
+        align-items: center;
+    }
+    .block {
+        max-width: 500px;
+        margin: 0.5em;
+        padding: 2em;
+    }
+    main .main {
+        display: grid;
+        grid-area: main;
+        grid-template-areas:
+                        "txt report"
+                        ". report"
+                        "txt2 report";
+        max-width: 1100px;
+    }
+    .main .txt {grid-area: txt;}
+    /*.main .txt2 {grid-area: txt2;}*/
+    .main article {
+        margin: 0 1em 0 1em;
+    }
+    .qt {
+        width: 100vw;
+    }
+    main .quote {
+        grid-area: quote;
+        width: 90vw;
+        max-width: 1100px;
+    }
+    .howitworks {grid-area: howitworks;}
+    .howitworks article h3 {
+        align-items: flex-end;
+    }
+    .about {grid-area: about;}
+    .faq {grid-area: faq;}
+}
+@media (min-width: 750px) and (max-width: 1246px) {
+    body {
+        margin: 0;
+    }
+    #logo {
+        margin: 0 .5em;
+    }
+    header {
+        width: 100vw;
+    }
+}

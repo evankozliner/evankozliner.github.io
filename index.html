@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="mailbox.png">
+
+    <title>Aimply Briefs</title>
+</head>
+<body>
+    <header>
+        <div class="left-element">
+            <img src="logo.png" alt="" class="logo-img">
+            <h1 id="logo">Aimply Briefs</h1>
+        </div>
+        <ul>
+            <a href="#team">Team</a>
+            <a href="#frm">How it works</a>
+            <a href="#faq">FAQ</a>
+        </ul>
+        <button id="hamburger">menu</button>
+    </header>
+    <nav style="height: 0px;">
+        <a class="mlinks" href="#team">Team</a>
+        <a class="mlinks" href="#frm">How it works</a>
+        <a class="mlinks" href="#faq">FAQ</a>
+        <br>
+    </nav>
+    <main>
+        <section class="block main"> <!-- Main block -->
+            <article class="txt"> <!--text-->
+                <h1>Start your day like an executive.</h1>
+                <h2>Get a personalized news report sent to your inbox, every weekday. Perfect for busy professionals and people who need to stay on top of trends.</h2>
+            </article>
+            <article class="report"> <!--report example-->
+                <div class="reportWrapper">
+                    <img class="rpt" src="zaid2x.png">
+                    <img class="rpt" src="tiffany2x.png">
+                    <img class="rpt" src="neil2x.png">
+                    <img class="rpt" src="tony2x.png">
+                </div>
+                <aside>
+                    <img class="dt" onclick="goToSlide(0); clearInterval(refreshIntervalID)" src="unselected.svg">
+                    <img class="dt" onclick="goToSlide(1); clearInterval(refreshIntervalID)" src="unselected.svg">
+                    <img class="dt" onclick="goToSlide(2); clearInterval(refreshIntervalID)" src="unselected.svg">
+                    <img class="dt" onclick="goToSlide(3); clearInterval(refreshIntervalID)" src="unselected.svg">
+                </aside>
+            </article>
+            <article class="txt2"> <!--text-->
+                <h2><div class="typeform-button" data-tf-live="01H73C9M8MQSCT1H9NQQVQWJM4"></div><img src="30arrow.svg"></h2>
+            </article>
+        </section>
+        <section class="block quote">
+            <div class="quoteWrapper">
+                <div class="qt">
+                    <article>
+                        <h2>"This saves me 45 minutes a day at least."<br></h2>
+                    </article>
+                    <article class="quotedecoration"><img src="quotedecoration.svg"></article>
+                    <article class="quoteauthor">
+                        <img class="rounded" src="Neil.jpeg" />
+                        <div class="container">
+                            <div class="left">
+                                <div class="top-quote"><p><b>Neil McCoy-Ward</b></p></div>
+                                <div class="bottom-quote"><i>400,000 on Youtube</i></div>
+                                <div class="bottom-quote"><i>Geopolitics Content Creator</i></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="qt">
+                    <article>
+                        <h2>"It's a great starting point for research on a video."<br></h2>
+                    </article>
+                    <article class="quotedecoration"><img src="quotedecoration.svg"></article>
+                    <article class="quoteauthor">
+                        <img class="rounded" src="zaid.jpeg"/>
+                        <div class="container">
+                            <div class="left">
+                                <div class="top-quote"><p><b>Zaid Admani</b></p></div>
+                                <div class="bottom-quote"><i>380,000 on Tiktok</i></div>
+                                <div class="bottom-quote"><i>Finance Content Creator</i></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="frm" class="block howitworks"> <!-- How it works block -->
+            <h2>How it works.</h2>
+            <article>
+                <h3><img class="num" src="one.svg">Tell us about yourself.<img class="emoji" src="writing-hand.png"></h3>
+                <p>You can give us a description of your job, interests, or business. We use this description to match you with the most relevant news every weekday.</p>
+            </article>
+            <article>
+                <h3><img class="num" src="two.svg">We do the research. <img class="emoji" src="technologist.png"></h3>
+                <p>Using a combination of human researchers and AI, we scan sources all over the internet and look for the biggest stories. That news gets fact checked, summarized, and multiple sources are cited so you can deeper when a topic seems important.</p>
+            </article>
+            <article>
+                <h3><img class="num" src="three.svg">We email you a summary. <img class="emoji" src="mailbox.png"></h3>
+                <p>Once our research for the day is done, we send you an email containing the most important news for you or your business.</p>
+            </article>
+            <button class="btmbtn">
+                <div class="typeform-button" data-tf-live="01H73C9M8MQSCT1H9NQQVQWJM4"></div><img src="30arrow.svg">
+            </button>
+        </section>
+        <section class="block about" id="team"> <!-- Who are we? block -->
+            <article>
+                <h2>Who are we?</h2>
+            </article>
+            <article>
+                <aside class="aboutCarosel">
+                    <img src="evan.webp">
+                    <div>
+                        <h3>Evan Kozliner, CEO</h3>
+                        <p>
+                            I'm an ex-Amazon senior software engineer with a background in AI. Outside of work, I blog about philosophy and tech news.
+                        </p>
+                    </div>
+                </aside>
+                <aside class="aboutCarosel">
+                    <img src="andrew.webp">
+                    <div>
+                        <h3>Andrew Martinez, Researcher</h3>
+                        <p>
+                            I'm a political science student and hobby programmer. I'm passionate about getting the facts straight and healthy debate.
+                        </p>
+                    </div>
+                </aside>
+            </article>
+        </section>
+        <section id="faq" class="block faq"> <!-- FAQ block -->
+            <div>
+                <h2>FAQ</h2>
+                <p>What is Aimply News? Learn more.</p>
+            </div>
+            <article>
+                <span class="q"><h4>How much does Aimply charge?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">Your first brief is free! If you like it, you can pay 20$/month for a personal subscription (up to 5 articles per day) or a business subscription (up to 20 articles per day).</p> <!--start hidden-->
+            </article>
+            <article>
+                <span class="q"><h4>How can I change the description Aimply Briefs uses to generate my report?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">Email <a href="mailto:app@aimply.io">app@aimply.io</a> with the change you'd like to make.</p> <!--start hidden-->
+            </article>
+            <article>
+                <span class="q"><h4>Can you add custom features to briefs?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">Yes! Contact us at evan@aimply.io for information about custom briefs.</p> <!--start hidden-->
+            </article>
+            <article>
+                <span class="q"><h4>How many stories will Aimply send me per day?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">For a personal subscription, up to 5. For a business subscription, up to 20. Contact us if you'd like more by emailing <a href="mailto:app@aimply.io">app@aimply.io.</a></p> <!--start hidden-->
+            </article>
+            <article>
+                <span class="q"><h4>How does Aimply Briefs quality assure its news?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">We have college-educated employees edit and fact check every story we collect with AI.</p>
+            </article>
+            <article>
+                <span class="q"><h4>Is it possible that an incorrect fact gets distributed by Aimply Briefs?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">Yes. Aimply is fact-checked and edited by humans, and humans can make mistakes. We cite multiple sources so can do your own research after receiving our brief. We always recommend doing your own research in addition to what we send.</p>
+            </article>
+            <article>
+                <span class="q"><h4>What was the inspiration for Aimply?</h4><img class="qarrow" src="arrowExpand.svg"></span>
+                <p class="a">U.S. presidents since 1946 have gotten a daily high-level summary and analysis of national security information delivered to their desk known as the President's Daily Brief. We want to democratize this process.</p>
+            </article>
+        </section>
+    </main>
+    <script src="hamburger.js"></script>
+    <script src="autocarousel.js"></script>
+    <script src="testimonials.js"></script>
+    <script src="report.js"></script>
+    <script src="quote.js"></script>
+    <script src="faq.js"></script>
+    <script src="https://embed.typeform.com/next/embed.js"></script>
+</body>
+</html>
