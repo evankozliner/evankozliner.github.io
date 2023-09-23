@@ -19,6 +19,25 @@ header {
     color: black;
     background-color: white;
 }
+footer {
+    margin: 1em auto 0 auto;
+    display: block;
+}
+.footer {
+    width: 50%;
+    font-size: .75em;
+}
+.footer ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.footer ul li {
+    margin: 0;
+}
 #logo {
     margin: 0;
     font-size: 1.5em;
@@ -190,6 +209,7 @@ nav a, nav button {
     align-items: flex-start;
     justify-content: center;
 }
+
 .qt {
     max-width: 1100px;
     width: 90vw;
@@ -382,7 +402,10 @@ h1#logo {
         font-size: 2.5em;
         margin-bottom: .5em;
     }
-
+    .footer {
+        width: 100%;
+        font-size: .75em;
+    }
 }
 @media (min-width: 750px) {
     body {
@@ -395,11 +418,12 @@ h1#logo {
         justify-content: center;
         grid-template-areas: 
                         "main main"
-                        "handchecked customreport"
                         "quote quote"
+                        "handchecked customreport"
                         "howitworks about"
-                        "howitworks faq";
-        
+                        "howitworks faq"
+                        "footer footer";
+
     }
     #hamburger {
         display: none;
@@ -444,6 +468,10 @@ h1#logo {
         max-width: 1100px;
     }
     .howitworks {grid-area: howitworks;}
+    .footer {
+        grid-area: footer;
+        text-align: center;
+    }
     .handchecked {grid-area: handchecked;}
     .customreport {grid-area: customreport;}
     .howitworks article h3, .handchecked {
