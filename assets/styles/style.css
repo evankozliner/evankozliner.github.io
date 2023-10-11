@@ -1,8 +1,13 @@
 body {
-    margin: 0 1em 2em 1em;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 1.1em;
+}
+main {
+  display: block;
+  position: relative;
+  margin: 1em;
 }
 header {
     display: flex;
@@ -23,6 +28,26 @@ footer {
     margin: 1em auto 0 auto;
     display: block;
 }
+
+p {
+  line-height: 1.4;
+}
+
+.row {
+  display: flex;
+  gap: 1em;
+}
+
+.col {
+  flex: 1;
+}
+
+@media (max-width: 755px) {
+  .row {
+    display: block;
+  }
+}
+
 .footer {
     width: 50%;
     font-size: .75em;
@@ -79,7 +104,8 @@ header ul a:hover {
     text-decoration:underline;
 }
 img.rounded {
-    border-radius: 50%;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 nav {
     display: flex;
@@ -106,10 +132,14 @@ nav a, nav button {
     padding: .2em;
 }
 .block {
-    margin-top: 2em;
+    margin-bottom: 1em;
     padding: 1em;
     border: 1px solid black;
     border-radius: 5px;
+}
+.block h2, .block h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 .main {
     background: black;
@@ -179,9 +209,12 @@ nav a, nav button {
     align-items: center;
     justify-content: center;
 }
-.main .report .reportWrapper {
+.main .report .report-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+.main .report .report-wrapper img {
+  flex: 0 0 100%;
 }
 .main .report img {
     width: 100%;
@@ -196,10 +229,8 @@ nav a, nav button {
     margin: 0 .35em 0 .35em;
 }
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: block;
+  position: relative;
 }
 .quote {
     display: flex;
@@ -269,13 +300,6 @@ nav a, nav button {
     max-width: 120px;
     max-height: 120px;
 }
-.howitworks article h3 .num, .handchecked {
-    margin-right: .7em;
-}
-.howitworks article h3 .emoji {
-    margin-left: 10%;
-    width: 70px;
-}
 .howitworks .btmbtn {
     display: flex;
     border: none;
@@ -311,21 +335,23 @@ nav a, nav button {
     border: 1px solid black;
     border-radius: 5px;
 } */
-.aboutCarosel {
+.about-carousel {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.aboutCarosel h3 {
+.about-carousel h3 {
     margin-bottom: 0;
 }
-.aboutCarosel p {
+.about-carousel p {
     margin-top: .5em;
 }
-.aboutCarosel img {
+.about-carousel img {
     width: 100px;
     height: 100px;
     margin-right: 1em;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 .faq div{
     display: flex;
@@ -334,14 +360,12 @@ nav a, nav button {
     align-items: center;
 }
 .faq div p {
-    margin: 1em;
 }
 .faq article p a {
     color: black;
 }
 .faq article {
     height: fit-content;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 .faq article span {
@@ -353,7 +377,7 @@ nav a, nav button {
 }
 .faq article span h4 {
     font-weight: medium;
-    margin: .5em;
+    margin: .75em 0;
 }
 .faq article span img {
     width: 15px;
@@ -362,7 +386,7 @@ nav a, nav button {
 }
 .faq article p {
     display: none;
-    margin-left: .5em;
+    margin-top: 0em;
 }
 
 .top-quote > p {
@@ -395,99 +419,4 @@ h1#logo {
 .main .txt h1 {
     font-size: 3.5em;
     margin-bottom: .5em;
-}
-@media (max-width: 576px) {
-    /* Mobile devices */
-    .main .txt h1 {
-        font-size: 2.5em;
-        margin-bottom: .5em;
-    }
-    .footer {
-        width: 100%;
-        font-size: .75em;
-    }
-}
-@media (min-width: 750px) {
-    body {
-        margin: 0 2em 2em 2em;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-        display: grid;
-        justify-items:center;
-        justify-content: center;
-        grid-template-areas: 
-                        "main main"
-                        "quote quote"
-                        "handchecked customreport"
-                        "howitworks about"
-                        "howitworks faq"
-                        "footer footer";
-
-    }
-    #hamburger {
-        display: none;
-    }
-    .subscribe {margin: 0.5em 2em 0.5em 2em;}
-    nav {
-        display: none;
-    }
-    header {
-        max-width: 1180px;
-        margin: auto;
-    }
-    header ul {
-        display: flex;
-        align-items: center;
-    }
-    .block {
-        max-width: 500px;
-        margin: 0.5em;
-        padding: 2em;
-    }
-    main .main {
-        display: grid;
-        grid-area: main;
-        grid-template-areas:
-                        "txt report"
-                        ". report"
-                        "txt2 report";
-        max-width: 1100px;
-    }
-    .main .txt {grid-area: txt;}
-    /*.main .txt2 {grid-area: txt2;}*/
-    .main article {
-        margin: 0 1em 0 1em;
-    }
-    .qt {
-        width: 100vw;
-    }
-    main .quote {
-        grid-area: quote;
-        width: 90vw;
-        max-width: 1100px;
-    }
-    .howitworks {grid-area: howitworks;}
-    .footer {
-        grid-area: footer;
-        text-align: center;
-    }
-    .handchecked {grid-area: handchecked;}
-    .customreport {grid-area: customreport;}
-    .howitworks article h3, .handchecked {
-        align-items: flex-end;
-    }
-    .about {grid-area: about;}
-    .faq {grid-area: faq;}
-}
-@media (min-width: 750px) and (max-width: 1246px) {
-    body {
-        margin: 0;
-    }
-    #logo {
-        margin: 0 .5em;
-    }
-    header {
-        width: 100vw;
-    }
 }

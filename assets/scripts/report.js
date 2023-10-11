@@ -1,5 +1,6 @@
-const slideshow = document.querySelector('.reportWrapper');
+const slideshow = document.querySelector('.report-wrapper');
 const slides = Array.from(slideshow.children);
+console.log(slides);
 const prefix = "assets/images/"
 let currentIndex = 0;
 let dots = document.getElementsByClassName("dt");
