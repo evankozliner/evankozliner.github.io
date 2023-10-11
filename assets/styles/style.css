@@ -1,8 +1,13 @@
 body {
-    margin: 0 1em 2em 1em;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 1.1em;
+}
+main {
+  display: block;
+  position: relative;
+  margin: 1em;
 }
 header {
     display: flex;
@@ -23,6 +28,26 @@ footer {
     margin: 1em auto 0 auto;
     display: block;
 }
+
+p {
+  line-height: 1.4;
+}
+
+.row {
+  display: flex;
+  gap: 1em;
+}
+
+.col {
+  flex: 1;
+}
+
+@media (max-width: 755px) {
+  .row {
+    display: block;
+  }
+}
+
 .footer {
     width: 50%;
     font-size: .75em;
@@ -79,7 +104,8 @@ header ul a:hover {
     text-decoration:underline;
 }
 img.rounded {
-    border-radius: 50%;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 nav {
     display: flex;
@@ -106,10 +132,14 @@ nav a, nav button {
     padding: .2em;
 }
 .block {
-    margin-top: 2em;
+    margin-bottom: 1em;
     padding: 1em;
     border: 1px solid black;
     border-radius: 5px;
+}
+.block h2, .block h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
 }
 .main {
     background: black;
@@ -185,9 +215,12 @@ nav a, nav button {
     align-items: center;
     justify-content: center;
 }
-.main .report .reportWrapper {
+.main .report .report-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+.main .report .report-wrapper img {
+  flex: 0 0 100%;
 }
 .main .report img {
     width: 100%;
@@ -203,10 +236,15 @@ nav a, nav button {
     margin: 0 .35em 0 .35em;
 }
 .main {
+<<<<<<< HEAD
     display: flex !important;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+=======
+  display: block;
+  position: relative;
+>>>>>>> 844a9dd (simplify layout and misc style changes)
 }
 .quote {
     display: flex;
@@ -276,13 +314,6 @@ nav a, nav button {
     max-width: 120px;
     max-height: 120px;
 }
-.howitworks article h3 .num, .handchecked {
-    margin-right: .7em;
-}
-.howitworks article h3 .emoji {
-    margin-left: 10%;
-    width: 70px;
-}
 .howitworks .btmbtn {
     display: flex;
     border: none;
@@ -318,21 +349,23 @@ nav a, nav button {
     border: 1px solid black;
     border-radius: 5px;
 } */
-.aboutCarosel {
+.about-carousel {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.aboutCarosel h3 {
+.about-carousel h3 {
     margin-bottom: 0;
 }
-.aboutCarosel p {
+.about-carousel p {
     margin-top: .5em;
 }
-.aboutCarosel img {
+.about-carousel img {
     width: 100px;
     height: 100px;
     margin-right: 1em;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 .faq div{
     display: flex;
@@ -341,14 +374,12 @@ nav a, nav button {
     align-items: center;
 }
 .faq div p {
-    margin: 1em;
 }
 .faq article p a {
     color: black;
 }
 .faq article {
     height: fit-content;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 .faq article span {
@@ -360,7 +391,7 @@ nav a, nav button {
 }
 .faq article span h4 {
     font-weight: medium;
-    margin: .5em;
+    margin: .75em 0;
 }
 .faq article span img {
     width: 15px;
@@ -369,7 +400,7 @@ nav a, nav button {
 }
 .faq article p {
     display: none;
-    margin-left: .5em;
+    margin-top: 0em;
 }
 
 .top-quote > p {
@@ -402,6 +433,7 @@ h1#logo {
 .main .txt h1 {
     font-size: 4.5em;
     margin-bottom: .5em;
+<<<<<<< HEAD
 }
 @media (max-width: 576px) {
     /* Mobile devices */
@@ -500,4 +532,6 @@ h1#logo {
     header {
         width: 100vw;
     }
+=======
+>>>>>>> 844a9dd (simplify layout and misc style changes)
 }
