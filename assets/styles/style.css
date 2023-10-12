@@ -159,10 +159,12 @@ nav a, nav button {
 .main .txt h1 {
     font-size: 3.5em;
     margin-bottom: 0.75em;
+    line-height: 1.1;
 }
 .main .txt h2, .main .txt h3 {
     font-weight: normal;
-    font-size: 1.2em
+    font-size: 1.2em;
+    line-height: 1.4;
 }
 .typeform-button button {
     display: inline-block !important;
