@@ -8,24 +8,28 @@ main {
   display: block;
   position: relative;
   margin: 1em;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 header {
-    display: flex;
-    flex-direction: row;
     position: sticky;
-    z-index: 2;
     top: 0;
-    padding-top: 1em;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    height: 2em;
-    padding-bottom: 1em;
     color: black;
     background-color: white;
+    z-index: 2;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1em 0;
 }
 footer {
-    margin: 1em auto 0 auto;
+    margin: 8em auto 0 auto;
     display: block;
 }
 
@@ -76,6 +80,7 @@ p {
     border: 1px solid black;
     border-radius: 5px;
     float: right;
+    margin-right: 1.5em;
 }
 
 .logo-group {
@@ -108,17 +113,19 @@ img.rounded {
     filter: drop-shadow(6px 6px 0 black);
 }
 nav {
-    display: flex;
-    transition: height .3s ease;
-    position: sticky;
     z-index: 2;
-    flex-direction: column;
+    position: sticky;
     top: 4em;
     width: 100%;
-    height: 0%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid;
     background-color: white;
+    transition: height .3s ease;
+    overflow-y: hidden;
+}
+nav .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 nav .mlinks {visibility: hidden;}
 nav button {
@@ -144,13 +151,14 @@ nav a, nav button {
 .main {
     background: black;
     color: white;
+    padding: 2em;
 }
-.txt {
-    max-width: 75%;
+.main .txt {
+    margin-bottom: 2em;
 }
 .main .txt h1 {
     font-size: 3.5em;
-    margin-bottom: .5em;
+    margin-bottom: 0.75em;
 }
 .main .txt h2, .main .txt h3 {
     font-weight: normal;
@@ -233,25 +241,21 @@ nav a, nav button {
   position: relative;
 }
 .quote {
-    display: flex;
-    overflow-x: hidden;
     padding: 1em 0;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .qt {
-    max-width: 1100px;
-    width: 90vw;
+    position: relative;
+    margin: 0 auto;
 }
 .quoteWrapper {
-    display: flex;
-    justify-content: flex-start;
+    position: relative;
     transition: transform 0.5s ease-in-out;
 }
 .quote .quoteWrapper .qt article h2 {
     text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
 }
 .quote .quoteWrapper .qt .quotedecoration {
     display: flex;
@@ -268,6 +272,7 @@ nav a, nav button {
     width: 100%;
     justify-content:center;
     align-items: center;
+    margin-bottom: 1em;
 }
 .qt article h2, .faq h2, .about h2, .howitworks h2 {
     font-size: 2em;
@@ -288,6 +293,9 @@ nav a, nav button {
 .howitworks, .customreport {
     background-color: rgb(197, 197, 255);
 }
+.howitworks article {
+  margin-bottom: 2em;
+}
 .howitworks article h3 {
     display: flex;
     align-items: center;
@@ -295,6 +303,9 @@ nav a, nav button {
 }
 .handchecked, .customreport {
     display: flex;
+}
+.handchecked p, .customreport p {
+  margin-bottom: 0;
 }
 .handchecked img, .customreport img {
     max-width: 120px;
@@ -307,6 +318,8 @@ nav a, nav button {
     filter: drop-shadow(6px 6px 0 black);
     padding: .4em 1.2em .4em 1.2em;
     border-radius: 5px;
+    margin-top: 3em;
+    margin-bottom: 1em;
 }
 .btmbtn:active {filter: none;}
 .btmbtn:hover {background-color: rgb(24, 24, 189);}
@@ -335,20 +348,21 @@ nav a, nav button {
     border: 1px solid black;
     border-radius: 5px;
 } */
-.about-carousel {
+.about-carousel .about-detail {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1em;
 }
 .about-carousel h3 {
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
 }
 .about-carousel p {
-    margin-top: .5em;
+  margin: 0;
 }
 .about-carousel img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     margin-right: 1em;
     border-radius: 5px;
     filter: drop-shadow(6px 6px 0 black);
@@ -367,6 +381,9 @@ nav a, nav button {
 .faq article {
     height: fit-content;
     border-bottom: 1px solid black;
+}
+.faq article:last-child {
+  border-bottom: none;
 }
 .faq article span {
     display: flex;
@@ -387,6 +404,9 @@ nav a, nav button {
 .faq article p {
     display: none;
     margin-top: 0em;
+}
+.faq .q0 h4 {
+  margin-top: 0;
 }
 
 .top-quote > p {
@@ -414,9 +434,4 @@ h1#logo {
 .bottom-quote {
     display: flex;
     justify-content: center;
-}
-
-.main .txt h1 {
-    font-size: 3.5em;
-    margin-bottom: .5em;
 }

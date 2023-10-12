@@ -38,24 +38,27 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo-group">
-            <div class="left-element">
-                <img src="assets/images/logo.png" alt="" class="logo-img">
-                <h1 id="logo">Aimply Briefs</h1>
-            </div>
-        </a>
-        <ul>
-            <a href="#team">Team</a>
-            <a href="#frm">How it works</a>
-            <a href="#faq">FAQ</a>
-        </ul>
-        <button id="hamburger">menu</button>
+        <div class="container">
+            <a href="index.html" class="logo-group">
+                <div class="left-element">
+                    <img src="assets/images/logo.png" alt="" class="logo-img">
+                    <h1 id="logo">Aimply Briefs</h1>
+                </div>
+            </a>
+            <ul>
+                <a href="#team">Team</a>
+                <a href="#frm">How it works</a>
+                <a href="#faq">FAQ</a>
+            </ul>
+            <button id="hamburger">menu</button>
+        </div>
     </header>
     <nav style="height: 0px">
-        <a class="mlinks" href="#team">Team</a>
-        <a class="mlinks" href="#frm">How it works</a>
-        <a class="mlinks" href="#faq">FAQ</a>
-        <br>
+        <div class="container">
+            <a class="mlinks" href="#team">Team</a>
+            <a class="mlinks" href="#frm">How it works</a>
+            <a class="mlinks" href="#faq">FAQ</a>
+        </div>
     </nav>
     <main>
         <section class="block main"> <!-- Main block -->
@@ -65,6 +68,9 @@
                         <h1>How content creators start their day.</h1>
                         <h2>Tired of wasting hours researching your next post?</h2>
                         <h3>Give us a description of your content and get a summary of the latest news relevant for your audience, sent to your inbox every weekday.</h3>
+                    </article>
+                    <article class="txt2"> <!--text-->
+                        <h2><div class="typeform-button" data-tf-live="01H73C9M8MQSCT1H9NQQVQWJM4"></div><img src="assets/images/30arrow.svg"></h2>
                     </article>
                 </div>
                 <div class="col">
@@ -79,9 +85,6 @@
                             <img class="dt" onclick="goToSlide(1); clearInterval(refreshIntervalID)" src="assets/images/unselected.svg">
                             <img class="dt" onclick="goToSlide(2); clearInterval(refreshIntervalID)" src="assets/images/unselected.svg">
                         </aside>
-                    </article>
-                    <article class="txt2"> <!--text-->
-                        <h2><div class="typeform-button" data-tf-live="01H73C9M8MQSCT1H9NQQVQWJM4"></div><img src="assets/images/30arrow.svg"></h2>
                     </article>
                 </div>
             </div>
@@ -148,21 +151,29 @@
                     </article>
                     <article>
                         <aside class="about-carousel">
-                            <img src="assets/images/evan.jpg">
-                            <div>
-                                <h3>Evan Kozliner, CEO</h3>
-                                <p>
-                                    I'm an ex-Amazon senior software engineer with a background in AI. Outside of work, I make Tiktoks and blog about tech news.
-                                </p>
+                            <div class="about-detail">
+                                <div>
+                                    <img src="assets/images/evan.jpg">
+                                </div>
+                                <div>
+                                    <h3>Evan Kozliner, CEO</h3>
+                                    <p>
+                                        I'm an ex-Amazon senior software engineer with a background in AI. Outside of work, I make Tiktoks and blog about tech news.
+                                    </p>
+                                </div>
                             </div>
                         </aside>
                         <aside class="about-carousel">
-                            <img src="assets/images/andrew.jpg">
-                            <div>
-                                <h3>Andrew Martinez, Researcher</h3>
-                                <p>
-                                    I've got a bachelors in political science and I'm a hobby programmer. I'm passionate about getting the facts straight and healthy debate.
-                                </p>
+                            <div class="about-detail">
+                                <div>
+                                    <img src="assets/images/andrew.jpg">
+                                </div>
+                                <div>
+                                    <h3>Andrew Martinez, Researcher</h3>
+                                    <p>
+                                        I've got a bachelors in political science and I'm a hobby programmer. I'm passionate about getting the facts straight and healthy debate.
+                                    </p>
+                                </div>
                             </div>
                         </aside>
                     </article>

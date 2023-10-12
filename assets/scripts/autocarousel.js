@@ -11,6 +11,6 @@ function showSlides() {
   if (slideIndex > profiles.length) {
     slideIndex = 1
   }
-  profiles[slideIndex - 1].style.display = "flex";
+  profiles[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 5000);
 }
