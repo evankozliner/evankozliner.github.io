@@ -8,7 +8,7 @@ let tg = true;
 function toggleNav() {
     if (tg) {
         tg = false;
-        nav.style.height = "230px";
+        nav.style.height = "160px";
         for (let i = 0; i < navLinks.length; i++) {setTimeout(() => {navLinks[i].style.visibility = "visible";}, 100);}
         hamburger.innerText = "close";
     } else {

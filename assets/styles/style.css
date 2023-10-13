@@ -1,28 +1,58 @@
 body {
-    margin: 0 1em 2em 1em;
+    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     overflow-x: hidden;
     font-size: 1.1em;
 }
+main {
+  display: block;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
 header {
-    display: flex;
-    flex-direction: row;
     position: sticky;
-    z-index: 2;
     top: 0;
-    padding-top: 1em;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
-    height: 2em;
-    padding-bottom: 1em;
     color: black;
     background-color: white;
+    z-index: 2;
+}
+header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1em 0;
 }
 footer {
-    margin: 1em auto 0 auto;
+    margin: 8em auto 1em auto;
     display: block;
 }
+
+p {
+  line-height: 1.4;
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 1em;
+}
+
+.col {
+  flex: 1;
+}
+
 .footer {
     width: 50%;
     font-size: .75em;
@@ -32,6 +62,7 @@ footer {
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    gap: 1em;
     list-style-type: none;
 }
 
@@ -43,7 +74,7 @@ footer {
     font-size: 1.5em;
 }
 #hamburger {
-    display: block;
+    display: none;
     height: 2em;
     background: none;
     color: black;
@@ -51,6 +82,7 @@ footer {
     border: 1px solid black;
     border-radius: 5px;
     float: right;
+    margin-right: 1.5em;
 }
 
 .logo-group {
@@ -64,12 +96,14 @@ footer {
     padding: .5em 1em .5em 1em;
     background-color: rgb(127, 245, 127);
 }
-header ul {
-    display: none;
-    z-index: 2;
-    flex-direction: row;
 
+header ul {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
+
 header ul a {
     color: black;
     text-decoration: none;
@@ -79,22 +113,27 @@ header ul a:hover {
     text-decoration:underline;
 }
 img.rounded {
-    border-radius: 50%;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 nav {
-    display: flex;
-    transition: height .3s ease;
-    position: sticky;
     z-index: 2;
-    flex-direction: column;
+    position: sticky;
     top: 4em;
     width: 100%;
-    height: 0%;
-    border-top: 2px solid black;
-    border-bottom: 2px solid;
     background-color: white;
+    transition: height .3s ease;
+    overflow-y: hidden;
 }
-nav .mlinks {visibility: hidden;}
+nav .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+nav .mlinks {
+    visibility: hidden;
+}
 nav button {
     font-size: 1em;
     background: none;
@@ -106,25 +145,33 @@ nav a, nav button {
     padding: .2em;
 }
 .block {
-    margin-top: 2em;
+    margin-bottom: 1em;
     padding: 1em;
     border: 1px solid black;
     border-radius: 5px;
 }
+.block h2, .block h3 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
 .main {
     background: black;
     color: white;
+    padding: 3em 2em;
 }
-.txt {
-    max-width: 75%;
+.main .txt {
+    margin-bottom: 2em;
 }
 .main .txt h1 {
     font-size: 3.5em;
-    margin: 0 !important;
+    margin-bottom: 0.75em;
+    margin-top: 0;
+    line-height: 1.1;
 }
 .main .txt h2, .main .txt h3 {
     font-weight: normal;
-    font-size: 1.2em
+    font-size: 1.2em;
+    line-height: 1.4;
 }
 .typeform-button button {
     display: inline-block !important;
@@ -179,15 +226,18 @@ nav a, nav button {
 }
 .main .report {
     display: flex;
-    grid-area: report;
     overflow-x: hidden;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
-.main .report .reportWrapper {
+.main .report .report-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+}
+.main .report .report-wrapper img {
+  flex: 0 0 100%;
 }
 .main .report img {
     width: 100%;
@@ -203,31 +253,30 @@ nav a, nav button {
     margin: 0 .35em 0 .35em;
 }
 .main {
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: block;
+  position: relative;
 }
 .quote {
-    display: flex;
+    padding: 1em;
     overflow-x: hidden;
-    padding: 1em 0;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .qt {
-    max-width: 1100px;
-    width: 90vw;
+    position: relative;
+    width: 100%;
+    margin: 0 1em;
 }
 .quoteWrapper {
-    display: flex;
-    justify-content: flex-start;
+    position: relative;
     transition: transform 0.5s ease-in-out;
+    flex-direction: row;
+    display: flex;
+    width: 200%;
 }
 .quote .quoteWrapper .qt article h2 {
     text-align: center;
+    margin-top: 0.5em;
+    margin-bottom: 0em;
 }
 .quote .quoteWrapper .qt .quotedecoration {
     display: flex;
@@ -244,6 +293,7 @@ nav a, nav button {
     width: 100%;
     justify-content:center;
     align-items: center;
+    margin-bottom: 1em;
 }
 .qt article h2, .faq h2, .about h2, .howitworks h2 {
     font-size: 2em;
@@ -264,6 +314,9 @@ nav a, nav button {
 .howitworks, .customreport {
     background-color: rgb(197, 197, 255);
 }
+.howitworks article {
+  margin-bottom: 2em;
+}
 .howitworks article h3 {
     display: flex;
     align-items: center;
@@ -272,16 +325,12 @@ nav a, nav button {
 .handchecked, .customreport {
     display: flex;
 }
+.handchecked p, .customreport p {
+  margin-bottom: 0;
+}
 .handchecked img, .customreport img {
     max-width: 120px;
     max-height: 120px;
-}
-.howitworks article h3 .num, .handchecked {
-    margin-right: .7em;
-}
-.howitworks article h3 .emoji {
-    margin-left: 10%;
-    width: 70px;
 }
 .howitworks .btmbtn {
     display: flex;
@@ -290,6 +339,8 @@ nav a, nav button {
     filter: drop-shadow(6px 6px 0 black);
     padding: .4em 1.2em .4em 1.2em;
     border-radius: 5px;
+    margin-top: 3em;
+    margin-bottom: 1em;
 }
 .btmbtn:active {filter: none;}
 .btmbtn:hover {background-color: rgb(24, 24, 189);}
@@ -318,21 +369,24 @@ nav a, nav button {
     border: 1px solid black;
     border-radius: 5px;
 } */
-.aboutCarosel {
+.about-carousel .about-detail {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 1em;
 }
-.aboutCarosel h3 {
-    margin-bottom: 0;
+.about-carousel h3 {
+    margin-bottom: 0.5em;
 }
-.aboutCarosel p {
-    margin-top: .5em;
+.about-carousel p {
+  margin: 0;
 }
-.aboutCarosel img {
-    width: 100px;
-    height: 100px;
+.about-carousel img {
+    width: 90px;
+    height: 90px;
     margin-right: 1em;
+    border-radius: 5px;
+    filter: drop-shadow(6px 6px 0 black);
 }
 .faq div{
     display: flex;
@@ -341,15 +395,16 @@ nav a, nav button {
     align-items: center;
 }
 .faq div p {
-    margin: 1em;
 }
 .faq article p a {
     color: black;
 }
 .faq article {
     height: fit-content;
-    border-top: 1px solid black;
     border-bottom: 1px solid black;
+}
+.faq article:last-child {
+  border-bottom: none;
 }
 .faq article span {
     display: flex;
@@ -360,7 +415,7 @@ nav a, nav button {
 }
 .faq article span h4 {
     font-weight: medium;
-    margin: .5em;
+    margin: .75em 0;
 }
 .faq article span img {
     width: 15px;
@@ -369,7 +424,10 @@ nav a, nav button {
 }
 .faq article p {
     display: none;
-    margin-left: .5em;
+    margin-top: 0em;
+}
+.faq .q0 h4 {
+  margin-top: 0;
 }
 
 .top-quote > p {
@@ -399,105 +457,22 @@ h1#logo {
     justify-content: center;
 }
 
-.main .txt h1 {
-    font-size: 4.5em;
-    margin-bottom: .5em;
-}
-@media (max-width: 576px) {
-    /* Mobile devices */
-    .main .txt h1 {
-        font-size: 2.5em;
-    }
-    .main {
-        flex-direction: column;
-        display: flex;
-    }
-    .footer {
-        width: 100%;
-        font-size: .75em;
-    }
-}
-@media (min-width: 750px) {
-    body {
-        margin: 0 2em 2em 2em;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-        display: grid;
-        justify-items:center;
-        justify-content: center;
-        grid-template-areas: 
-                        "main main"
-                        "quote quote"
-                        "handchecked customreport"
-                        "howitworks about"
-                        "howitworks faq"
-                        "footer footer";
+@media (max-width: 755px) {
+  .row {
+    display: block;
+  }
 
-    }
-    #hamburger {
-        display: none;
-    }
-    .subscribe {margin: 0.5em 2em 0.5em 2em;}
-    nav {
-        display: none;
-    }
-    header {
-        max-width: 1180px;
-        margin: auto;
-    }
-    header ul {
-        display: flex;
-        align-items: center;
-    }
-    .block {
-        max-width: 500px;
-        margin: 0.5em;
-        padding: 2em;
-    }
-    main .main {
-        display: grid;
-        grid-area: main;
-        grid-template-areas:
-                        "txt report"
-                        ". report"
-                        "txt2 report";
-        max-width: 1100px;
-    }
-    .main .txt {grid-area: txt;}
-    /*.main .txt2 {grid-area: txt2;}*/
-    .main article {
-        /*margin: 0 1em 0 1em;*/
-    }
-    .qt {
-        width: 100vw;
-    }
-    main .quote {
-        grid-area: quote;
-        width: 90vw;
-        max-width: 1100px;
-    }
-    .howitworks {grid-area: howitworks;}
-    .footer {
-        grid-area: footer;
-        text-align: center;
-    }
-    .handchecked {grid-area: handchecked;}
-    .customreport {grid-area: customreport;}
-    .howitworks article h3, .handchecked {
-        align-items: flex-end;
-    }
-    .about {grid-area: about;}
-    .faq {grid-area: faq;}
+  header ul {
+      display: none;
+      flex-direction: row;
+  }
+
+  #hero {
+    margin-bottom: 2em;
+  }
+
+  #hamburger {
+    display: block;
+  }
 }
-@media (min-width: 750px) and (max-width: 1246px) {
-    body {
-        margin: 0;
-    }
-    #logo {
-        margin: 0 .5em;
-    }
-    header {
-        width: 100vw;
-    }
-}
+
