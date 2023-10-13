@@ -220,7 +220,6 @@ nav a, nav button {
 }
 .main .report {
     display: flex;
-    grid-area: report;
     overflow-x: hidden;
     flex-direction: column;
     align-items: center;
@@ -252,15 +251,20 @@ nav a, nav button {
 }
 .quote {
     padding: 1em;
+    overflow-x: hidden;
 }
 
 .qt {
     position: relative;
     margin: 0 auto;
+    width: 100%;
 }
 .quoteWrapper {
     position: relative;
     transition: transform 0.5s ease-in-out;
+    flex-direction: row;
+    display: flex;
+    width: 200%;
 }
 .quote .quoteWrapper .qt article h2 {
     text-align: center;
