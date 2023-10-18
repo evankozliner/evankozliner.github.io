@@ -51,6 +51,8 @@ p {
 
 .col {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer {
@@ -265,13 +267,16 @@ nav a, nav button {
     position: relative;
     width: 100%;
     margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .quoteWrapper {
     position: relative;
     transition: transform 0.5s ease-in-out;
     flex-direction: row;
     display: flex;
-    width: 200%;
+    width: 400%;
 }
 .quote .quoteWrapper .qt article h2 {
     text-align: center;
@@ -388,6 +393,9 @@ nav a, nav button {
     border-radius: 5px;
     filter: drop-shadow(6px 6px 0 black);
 }
+.faq {
+  flex-grow: 1;
+}
 .faq div{
     display: flex;
     flex-direction: row;
@@ -431,7 +439,7 @@ nav a, nav button {
 }
 
 .top-quote > p {
-    margin-top: 0.5em;
+    margin: 0.5em 0;
 }
 
 .top-quote > p > b {
@@ -455,6 +463,53 @@ h1#logo {
 .bottom-quote {
     display: flex;
     justify-content: center;
+}
+
+.tier {
+  border: 1px solid black;
+  border-radius: 5px;
+  flex-grow: 1;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.tier.power {
+  background-color: black;
+  color: white;
+}
+
+.tier h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.3em;
+}
+
+.tier h3 {
+  margin-top: 0;
+  margin-bottom: 2em;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.tier .feature {
+  display: flex;
+  gap: 2em;
+  margin-bottom: 1em;
+}
+
+.tier .feature p {
+  margin: 0;
+}
+
+.tier .feature > div {
+  color: rgb(93, 93, 255);
+  position: relative;
+}
+
+.tier .feature > div p {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
 }
 
 @media (max-width: 755px) {
