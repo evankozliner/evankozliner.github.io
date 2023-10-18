@@ -265,13 +265,16 @@ nav a, nav button {
     position: relative;
     width: 100%;
     margin: 0 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .quoteWrapper {
     position: relative;
     transition: transform 0.5s ease-in-out;
     flex-direction: row;
     display: flex;
-    width: 200%;
+    width: 400%;
 }
 .quote .quoteWrapper .qt article h2 {
     text-align: center;
@@ -431,7 +434,7 @@ nav a, nav button {
 }
 
 .top-quote > p {
-    margin-top: 0.5em;
+    margin: 0.5em 0;
 }
 
 .top-quote > p > b {
