@@ -249,6 +249,7 @@ nav a, nav button {
 .nav-tf-btn {
 
 }
+# TODO need to fix the damn h2 button thing
 .main .txt2 h2:hover {background-color: rgb(24, 24, 189);}
 .main .txt2 h2 a {
     color: white;
@@ -331,7 +332,7 @@ nav a, nav button {
     align-items: center;
     margin-bottom: 1em;
 }
-.qt article h2, .faq h2, .about h2, .howitworks h2 {
+.qt article h2, .faq h2, .about h2, .howitworks h2, .customreport h2, .who-its-for-section h2, .handchecked h2, .what-its-like h2 {
     font-size: 2em;
 }
 .quote .quoteWrapper .qt .quoteauthor img {
