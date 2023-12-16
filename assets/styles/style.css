@@ -180,6 +180,12 @@ nav a, nav button {
   margin-top: 0;
   margin-bottom: 1em;
 }
+.cta {
+    margin-bottom: 0.5em !important;
+}
+.cta-row-content {
+    margin: 0.5em 0.5em 0.5em 0.5em !important;
+}
 .main {
     background: black;
     color: white;
@@ -189,7 +195,7 @@ nav a, nav button {
     margin-bottom: 2em;
 }
 .main .txt h1 {
-    font-size: 3.5em;
+    font-size: 4.5em;
     margin-bottom: 0.75em;
     margin-top: 0;
     line-height: 1.1;
