@@ -85,6 +85,8 @@ p {
 #logo {
     margin: 0;
     font-size: 1.5em;
+    display: inline-flex;
+    align-items: center;
 }
 #hamburger {
     display: none;
@@ -484,6 +486,10 @@ nav a, nav button {
 
 .logo-img {
     max-height: 35px;
+    margin-left: 5px;
+}
+.emphasis-logo {
+    color: rgb(93 93 255);
 }
 
 .left-element {
