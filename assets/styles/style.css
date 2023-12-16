@@ -252,10 +252,6 @@ nav a, nav button {
 .override-dropshadow-white {
     filter: drop-shadow(6px 6px 0 white) !important;
 }
-.nav-tf-btn {
-
-}
-# TODO need to fix the damn h2 button thing
 .main .txt2 h2:hover {background-color: rgb(24, 24, 189);}
 .main .txt2 h2 a {
     color: white;
@@ -562,6 +558,29 @@ h1#logo {
 }
 
 @media (max-width: 755px) {
+    .main .txt h1 {
+    font-size: 2.5em;
+        margin-bottom: 0.5em;
+  }
+    .main .txt h2, .main .txt h3 {
+        font-size: 1em;
+    }
+    .main .txt2 h2 {
+        margin: auto;
+        margin-bottom: 1em;
+    }
+    .txt {
+        text-align: center;
+    }
+    .main {
+        padding: 1em;
+    }
+    .main .txt {
+        margin-bottom: 0.5em;
+    }
+    #hero {
+        margin-bottom: 0;
+    }
   .row {
     display: block;
   }
@@ -569,10 +588,6 @@ h1#logo {
   header ul {
       display: none;
       flex-direction: row;
-  }
-
-  #hero {
-    margin-bottom: 2em;
   }
 
   #hamburger {
