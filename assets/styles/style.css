@@ -207,6 +207,71 @@ nav a, nav button {
     font-size: 1.2em;
     line-height: 1.4;
 }
+.cta-button {
+    color: white;
+    border-color: rgba(0, 0, 0, 0);
+    width: auto;
+    max-width: 10em;
+    border-radius: 5px;
+    /*height: 52px;*/
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    padding: .2em .8em .35em .8em;
+    font-style: normal;
+    background-color: rgb(93, 93, 255);
+    border-width: 2px;
+}
+.cta-row .cta-button {
+    display: block;
+    margin: auto;
+}
+.features .cta-button {
+    margin: auto;
+}
+
+.cta-button a {
+    /*remove all default styling*/
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+.cta-button:after {
+    content: '' !important;
+    position: absolute !important;
+    width: 50% !important;
+    bottom: 15% !important;
+    left: 25% !important;
+    transform: scaleX(0) !important;
+    height: 2px !important;
+    background-color: white !important;
+    transform-origin: bottom right !important;
+    transition: transform 0.25s ease-out !important;
+}
+.cta-button:hover:after {
+    transform: scaleX(1) !important;
+    transform-origin: bottom left !important;
+}
+.typeform-button{
+    border-radius: 5px !important;
+    width: auto;
+    max-width: 15em;
+    border-color: rgba(0, 0, 0, 0);
+    /*height: 52px;*/
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: normal;
+    background-color: rgb(93, 93, 255);
+    border-width: 2px;
+}
+.typeform-button-white {
+    filter: drop-shadow(6px 6px 0 white);
+}
+.cta-button-black {
+    filter: drop-shadow(6px 6px 0 black);
+}
 .typeform-button button {
     display: inline-block !important;
     position: relative !important;
@@ -218,16 +283,16 @@ nav a, nav button {
     height: 22px !important;
 }
 .typeform-button button:after {
-  content: '' !important;
-  position: absolute !important;
-  width: 100% !important;
-  transform: scaleX(0) !important;
-  height: 2px !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  background-color: white !important;
-  transform-origin: bottom right !important;
-  transition: transform 0.25s ease-out !important;
+    content: '' !important;
+    position: absolute !important;
+    width: 100% !important;
+    transform: scaleX(0) !important;
+    height: 2px !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    background-color: white !important;
+    transform-origin: bottom right !important;
+    transition: transform 0.25s ease-out !important;
 }
 .typeform-button button:hover:after {
     transform: scaleX(1) !important;
