@@ -383,6 +383,21 @@
             </ul>
         </footer>
     </main>
-    
+
+    <script>
+
+        // Add the event listener to the document or a specific element
+        intervalId = setInterval(() => {
+            const form = document.querySelector('.SubmitMessage__Title-sc-n9b9ya-2');
+
+            if (form !== null) {
+                console.log("Submitted");
+                rdt('track', 'SignUp');
+                clearInterval(intervalId);
+            } else {
+                console.log('not found');
+            }
+        }, 200);
+    </script>
 </body>
 </html>
