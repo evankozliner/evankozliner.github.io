@@ -23,3 +23,15 @@ function nextSlide() {
 }
 goToSlide(0);
 var refreshIntervalID = setInterval(nextSlide, 8000); // Auto scroll every 5 seconds
+
+function togglePlay() {
+  var video = document.getElementById("myVideo");
+  var button = document.getElementById("playButton");
+  if (video.paused) {
+    video.play();
+    button.style.display = 'none';
+  } else {
+    video.pause();
+    button.style.display = 'block';
+  }
+}
