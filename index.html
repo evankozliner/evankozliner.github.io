@@ -38,6 +38,8 @@
       gtag('config', 'G-KWPFW1EC60');
       gtag('config', 'AW-11320837749');
     </script>
+    <!-- Event snippet for SignupCVR conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-11320837749/n0B5CPekm4IZEPWMmZYq', 'event_callback': callback }); return false; } </script>
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -424,7 +426,7 @@
                 console.log("Submitted");
                 // rdt('track', 'SignUp');
                 fbq('track', 'CompleteRegistration');
-                gtag('event', 'conversion', {'send_to': 'AW-11320837749/sHzACOzH5NsYEPWMmZYq'});
+                gtag_report_conversion('https://briefs.aimply.io')
                 clearInterval(intervalId);
             } else {
                 console.log('not found');
