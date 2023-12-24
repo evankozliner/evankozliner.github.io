@@ -852,7 +852,9 @@
                 clearInterval(signupInterval);
             } else {
                 const form = document.querySelector('.eapps-widget-show-toolbar');
-                if (form !== null) {
+                const form2 = document.querySelector('.eapps-widget');
+                // const form3 = document.querySelector('.elfsight-app-795aa377-c76a-425e-bbba-4fbc6a6ebc6e');
+                if (form !== null || form2 !== null) {
                     hideLoadingBar();
                     console.log("Found");
                     // show the form
