@@ -515,9 +515,11 @@
                                 </div>
 
                             </div>
+<!--
                             <div id="loadingBarContainer" class="loading-bar-container">
                                 <div class="loading-bar"></div>
                             </div>
+-->
                         </div>
                     </div>
                 </div>
@@ -846,22 +848,31 @@
             const smsSignup = urlParams.get('sms');
             if (smsSignup !== null) {
                 // and show the sms signup form
-                hideLoadingBar();
+                // hideLoadingBar();
                 const smsForm = document.querySelector('.sms-signup-form');
                 smsForm.style.display = "block";
                 clearInterval(signupInterval);
             } else {
+                console.log("not sms")
+/*
                 const form = document.querySelector('.eapps-widget-show-toolbar');
                 const form2 = document.querySelector('.eapps-widget');
+*/
                 // const form3 = document.querySelector('.elfsight-app-795aa377-c76a-425e-bbba-4fbc6a6ebc6e');
+/*
                 if (form !== null || form2 !== null) {
                     hideLoadingBar();
                     console.log("Found");
+*/
                     // show the form
-                    const emailForm = document.querySelector('.email-signup-form');
-                    emailForm.style.display = "block";
+               const emailform = document.querySelector('.email-signup-form');
+               emailform.style.display = "block";
+                clearInterval(signupInterval);
+/*
+                    emailform.style.display = "block";
                     clearInterval(signupInterval);
                 }
+*/
             }
         }, 100);
 
