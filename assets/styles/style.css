@@ -1,3 +1,22 @@
+
+html {
+    --primary-color: rgba(35, 153, 240);
+
+    --text-primary: rgba(0, 14, 36, 0.87);
+    --text-caption: rgba(0, 27, 72, 0.54);
+    --text-red-50: rgba(230, 54, 85);
+
+    --controls-border-color: rgba(0, 27, 72, 0.32);
+    --controls-border-radius: 8px;
+    --input-focus-box-shadow: 0px 0px 0px 2px rgba(35, 153, 240, 0.5);
+    --input-focus-border-color: var(--primary-color);
+
+    --card-box-shadow: 0px 2px 8px rgba(0, 27, 72, 0.13);
+
+    --st-color-white: #FFF;
+    --st-color-primary: rgba(35, 153, 240);
+    --st-color-text-disabled: rgba(0, 27, 72, 0.32);
+}
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -217,6 +236,209 @@ nav a, nav button {
     transform: translate(-50%, -50%);
     cursor: pointer;
     max-width: 25%;
+}
+.sms-signup-form, .email-signup-form {
+    display: none;
+}
+.loading-bar-container {
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    position: relative;
+    overflow: hidden;
+}
+
+.signup {
+    margin-bottom: 1em;
+}
+
+.loading-bar {
+    width: 25%;
+    height: 100%;
+    background-color: rgb(93, 93, 255);
+    position: absolute;
+    animation: move 2s linear infinite;
+}
+
+.st-signupform-terms-agreed-error {
+    margin: 4px 0 0 24px;
+    color: var(--text-red-50);
+}
+
+.st-signupform__label {
+    font-weight: bold;
+    line-height: 2em;
+    word-break: break-word;
+}
+.st-signupform .st-terms-and-conditions-text a {
+    color: white !important;
+    font-size: 16px;
+    line-height: 18px;
+}
+.terms-checkbox {
+    margin-bottom: 4px;
+}
+
+.st-signupform input[type="text"],textarea {
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--controls-border-color);
+    border-radius: var(--controls-border-radius);
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    margin: 4px 0;
+    outline: none;
+    -webkit-transition: .3s all;
+    transition: .3s all;
+}
+
+.st-hidden {
+    display: none;
+}
+.st-signupform input[type="text"]:focus,
+textarea:focus,
+.st-signupform input[type="checkbox"]:focus,
+button:focus
+{
+    border-color: var(--input-focus-border-color);
+    box-shadow: var(--input-focus-box-shadow);
+    -webkit-transition: .3s all;
+    transition: .3s all;
+}
+
+.st-signupform input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    background-color: var(--st-color-white);
+    border: 1px solid var(--st-color-text-disabled);
+    box-shadow: inset 0 0 3px rgb(0 0 0 / 15%);
+    position: relative;
+    transition: .3s all;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.st-signupform input[type="checkbox"]:disabled {
+    cursor: default;
+}
+
+.st-checkbox label {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.st-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.st-signupform button[type="submit"] {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    box-sizing: border-box;
+    filter: drop-shadow(6px 6px 0 white);
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    line-height: 20px;
+    background-color: rgb(93, 93, 255);
+    border: 0 none;
+    color: white;
+    margin: 30px 0 24px;
+}
+
+.st-signupform button[type="submit"]:disabled {
+    cursor: default;
+    background-color: var(--st-color-text-disabled);
+    color: white;
+}
+
+.st-signupform input[type="checkbox"]:before {
+    content: '';
+    background-image: url('../join-web-form/st-checkbox.svg');
+    background-size: 8px;
+    display: block;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: .3s all;
+}
+.st-signupform input[type="checkbox"]:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--st-color-white);
+    opacity: 0;
+    transition: .3s all;
+    top: 7px;
+    left: 3px;
+}
+.st-signupform input[type="checkbox"]:checked {
+    background-color: var(--st-color-primary);
+    border-color: var(--st-color-primary);
+}
+.st-signupform input[type="checkbox"]:checked:before {
+    opacity: 1;
+    background-size: 12px;
+}
+.st-signupform input[type="checkbox"]:indeterminate {
+    background-color: var(--st-color-primary);
+    border-color: var(--st-color-primary);
+}
+.st-signupform input[type="checkbox"]:indeterminate:after {
+    opacity: 1;
+}
+
+
+.st-signupform-server-error-message {
+    color: var(--text-red-50);
+}
+.st-signupform button[type="submit"]:disabled {
+    cursor: default;
+    background-color: var(--st-color-text-disabled);
+    color: white;
+}
+.st-signupform input[type="checkbox"]:before {
+    content: '';
+    background-image: url('../join-web-form/st-checkbox.svg');
+    background-size: 8px;
+    display: block;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    transition: .3s all;
+}
+
+@keyframes move {
+    0% { left: -25%; }
+    50% { left: 100%; }
+    100% { left: -25%; }
 }
 
 .cta-button {
