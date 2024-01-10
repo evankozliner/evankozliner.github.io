@@ -52,6 +52,35 @@ header .container {
     font-size: 3.5em;
     margin: 1em 0 1em 0;
 }
+.toggle-container {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.toggle-switch {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.toggle-option {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+.content {
+    display: none;
+}
+
+.content.active {
+    display: block;
+}
+
+/* Style for the active toggle option */
+.active-toggle {
+    background-color: rgb(93, 93, 255);
+}
 .briefs-video {
     width: 100%;
     border: none;
@@ -873,6 +902,9 @@ h1#logo {
     .main .txt2 h2 {
         margin: auto;
         margin-bottom: 1em;
+    }
+    .toggle-container{
+        text-align: center;
     }
     .txt {
         text-align: center;

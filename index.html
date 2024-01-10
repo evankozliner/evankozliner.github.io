@@ -449,11 +449,17 @@
                     <div id="hero">
                         <article class="txt"> <!--text-->
                             <h1>News that doesn't waste your time.</h1>
-                            <h2>Give us a description of yourself and get a daily digest of the most relevants news sent to your inbox every weekday.</h2>
+                            <h2>Give us a description of yourself and get a daily digest of the most relevant news sent to your inbox every weekday.</h2>
                             <h3>It's free and signup takes less than a minute.</h3>
                         </article>
 <!--                        hide both initially and show when you know url params-->
                         <div class="signup">
+                            <div class="toggle-container">
+                                <div class="toggle-switch">
+                                    <span class="toggle-option" data-target="email">Email</span>
+                                    <span class="toggle-option" data-target="sms">SMS</span>
+                                </div>
+                            </div>
                             <div class="email-signup-form">
                                 <div class="elfsight-app-795aa377-c76a-425e-bbba-4fbc6a6ebc6e"></div>
                             </div>
@@ -889,6 +895,40 @@
                 // console.log('not found');
             }
         }, 200);
+
+        // lol more trash code but huge hurry
+        document.querySelectorAll('.toggle-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.toggle-option').forEach(opt => opt.classList.remove('active-toggle'));
+                this.classList.add('active-toggle');
+
+                let target = this.getAttribute('data-target');
+                console.log(target);
+                if (target === 'sms') {
+                    const emailform = document.querySelector('.email-signup-form');
+                    emailform.style.display = "none";
+                    const smsForm = document.querySelector('.sms-signup-form');
+                    smsForm.style.display = "block";
+                } else if (target === 'email') {
+                    const emailform = document.querySelector('.email-signup-form');
+                    emailform.style.display = "block";
+                    const smsForm = document.querySelector('.sms-signup-form');
+                    smsForm.style.display = "none";
+                }
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.display = content.id === target ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Check URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('sms')) {
+            document.querySelector('[data-target="sms"]').click();
+        } else {
+            document.querySelector('[data-target="email"]').click();
+        }
+
     </script>
 </body>
 </html>
