@@ -840,45 +840,21 @@
     </main>
 
     <script>
-        function showLoadingBar() {
-            document.getElementById('loadingBarContainer').style.display = 'block';
-        }
-
-        function hideLoadingBar() {
-            document.getElementById('loadingBarContainer').style.display = 'none';
-        }
-
         signupInterval = setInterval(() => {
             // if there is an sms url param, then hide the form
             const urlParams = new URLSearchParams(window.location.search);
-            const smsSignup = urlParams.get('sms');
-            if (smsSignup !== null) {
+            const emailSignup = urlParams.get('email');
+            if (emailSignup !== null) {
+                console.log("Showing email because email in params")
                 // and show the sms signup form
                 // hideLoadingBar();
+                const emailForm = document.querySelector('.email-signup-form');
+                emailForm.style.display = "block";
+                clearInterval(signupInterval);
+            } else {
                 const smsForm = document.querySelector('.sms-signup-form');
                 smsForm.style.display = "block";
                 clearInterval(signupInterval);
-            } else {
-                console.log("not sms")
-/*
-                const form = document.querySelector('.eapps-widget-show-toolbar');
-                const form2 = document.querySelector('.eapps-widget');
-*/
-                // const form3 = document.querySelector('.elfsight-app-795aa377-c76a-425e-bbba-4fbc6a6ebc6e');
-/*
-                if (form !== null || form2 !== null) {
-                    hideLoadingBar();
-                    console.log("Found");
-*/
-                    // show the form
-               const emailform = document.querySelector('.email-signup-form');
-               emailform.style.display = "block";
-                clearInterval(signupInterval);
-/*
-                    emailform.style.display = "block";
-                    clearInterval(signupInterval);
-                }
-*/
             }
         }, 100);
 
@@ -923,10 +899,10 @@
 
         // Check URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('sms')) {
-            document.querySelector('[data-target="sms"]').click();
-        } else {
+        if (urlParams.has('email')) {
             document.querySelector('[data-target="email"]').click();
+        } else {
+            document.querySelector('[data-target="sms"]').click();
         }
 
     </script>
