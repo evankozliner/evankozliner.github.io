@@ -39,7 +39,19 @@
       gtag('config', 'AW-11320837749');
     </script>
     <!-- Event snippet for SignupCVR conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    <script> function gtag_report_conversion(url) { var callback = function () { if (typeof(url) != 'undefined') { window.location = url; } }; gtag('event', 'conversion', { 'send_to': 'AW-11320837749/n0B5CPekm4IZEPWMmZYq', 'event_callback': callback }); return false; } </script>
+    <script>function gtag_report_conversion(url, type, referrer) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') { window.location = url; }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11320837749/n0B5CPekm4IZEPWMmZYq',
+            'event_callback': callback,
+            'type': type,
+            'referrer': referrer
+        });
+        return false;
+    }
+    </script>
     <!-- Meta Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -840,9 +852,16 @@
     </main>
 
     <script>
+
+        // extract the referrer from the url parameters. if not there is no referrer make it n/a
+        let referrer = "n/a";
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('ref')) {
+            referrer = urlParams.get('ref');
+        }
+
         signupInterval = setInterval(() => {
             // if there is an sms url param, then hide the form
-            const urlParams = new URLSearchParams(window.location.search);
             const emailSignup = urlParams.get('email');
             if (emailSignup !== null) {
                 console.log("Showing email because email in params")
@@ -865,12 +884,17 @@
                 console.log("Submitted");
                 // rdt('track', 'SignUp');
                 fbq('track', 'CompleteRegistration');
-                gtag_report_conversion('https://briefs.aimply.io')
+                gtag_report_conversion('https://briefs.aimply.io', "email", referrer)
                 clearInterval(conversionInterval);
             } else {
                 // console.log('not found');
             }
         }, 200);
+
+        document.querySelector('#subscribeNow').addEventListener('click', function() {
+            fbq('track', 'Lead');
+            gtag_report_conversion('https://briefs.aimply.io', "sms", referrer)
+        });
 
         // lol more trash code but huge hurry
         document.querySelectorAll('.toggle-option').forEach(option => {
@@ -898,7 +922,6 @@
         });
 
         // Check URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('email')) {
             document.querySelector('[data-target="email"]').click();
         } else {
