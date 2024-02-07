@@ -28,8 +28,15 @@
     <!-- DO NOT MODIFY UNLESS TO REPLACE A USER IDENTIFIER -->
     <!-- End Reddit Pixel -->
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) for google anlaytics-->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KWPFW1EC60"></script>
+    <!-- Google Tag Manager; different than the other google things -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M5KXXW2N');</script>
+    <!-- End Google Tag Manager -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -39,17 +46,22 @@
       gtag('config', 'AW-11320837749');
     </script>
     <!-- Event snippet for SignupCVR conversion page In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
-    // TODO something here is causing page refresh
+<!--    // TODO something here is causing page refresh-->
     <script>function gtag_report_conversion(url, type, referrer) {
         var callback = function () {
             // if (typeof(url) != 'undefined') { window.location = url; }
             console.log("Conversion reported")
         };
+        // count in both ads and analytics
         gtag('event', 'conversion', {
             'send_to': 'AW-11320837749/n0B5CPekm4IZEPWMmZYq',
             'event_callback': callback,
             'type': type,
             'referrer': referrer
+        });
+        window.dataLayer.push({
+            'event': 'signup_complete',
+            'referral': referrer, // e.g., "chidi"
         });
         return false;
     }
@@ -932,4 +944,9 @@
 
     </script>
 </body>
+<!--intended immediately after the opening <body> tag:-->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5KXXW2N"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 </html>
