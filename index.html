@@ -325,6 +325,9 @@
                         confirmationTextEl.style.display = 'block';
 
                         form.reset();
+
+                        window.location = response.user.magic_link;
+
                     }  else if (this.status === 429) { // too many requests
                         submitButton.disabled = false;
                         showTooManyRequestsInputFormError(form, type)
