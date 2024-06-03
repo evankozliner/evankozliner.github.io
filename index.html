@@ -388,9 +388,16 @@
                     console.log("phone: ", phone);
                     console.log("email: ", email);
 
+                    // if there is a url parameter called "hand onboard" then add that to the url
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const handOnboard = urlParams.get('handonboard');
+
                     let url = `${form.action}/api/v1/user?date=${Date.now()}&email=${email}`;
                     if (type === "sms") {
                         url = `${form.action}/api/v1/user?date=${Date.now()}&phone=${phone}`;
+                    }
+                    if (handOnboard) {
+                        url += `&handonboard=true`;
                     }
 
                     const request = new XHR();
