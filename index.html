@@ -326,6 +326,16 @@
 
                         form.reset();
 
+                        // if handonboard is in the url, then add a url paramterer "handonboard" to the magic link
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const handOnboard = urlParams.get('handonboard');
+                        if (window.location.search. includes("handonboard")) {
+                            console.log("handonboard")
+                            response.user.magic_link += `&handonboard=true`;
+                        } else {
+                            console.log("no handonboard")
+                        }
+
                         window.location = response.user.magic_link;
 
                     }  else if (this.status === 429) { // too many requests
@@ -388,16 +398,24 @@
                     console.log("phone: ", phone);
                     console.log("email: ", email);
 
+                    const referrer = encodeURIComponent(document.referrer);
+
                     // if there is a url parameter called "hand onboard" then add that to the url
                     const urlParams = new URLSearchParams(window.location.search);
-                    const handOnboard = urlParams.get('handonboard');
+                    // get "ref" from url parameters
 
-                    let url = `${form.action}/api/v1/user?date=${Date.now()}&email=${email}`;
+                    const handOnboard = window.location.search. includes("handonboard");
+
+                    let url = `${form.action}/api/v1/user?date=${Date.now()}&email=${email}&referrer=${referrer}`;
                     if (type === "sms") {
-                        url = `${form.action}/api/v1/user?date=${Date.now()}&phone=${phone}`;
+                        url = `${form.action}/api/v1/user?date=${Date.now()}&phone=${phone}&referrer=${referrer}`;
                     }
                     if (handOnboard) {
                         url += `&handonboard=true`;
+                    }
+                    const ref = urlParams.get('ref');
+                    if (ref) {
+                        url += `&ref=${ref}`;
                     }
 
                     const request = new XHR();
