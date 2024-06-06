@@ -304,6 +304,9 @@
                 }
 
                 function handleLoadForm(form, type) {
+                    if (window.location.search. includes("handonboard")) {
+                        console.log("handonboard, skipping user email")
+                    }
                     const submitButton = getSubmitButton(form, type);
                     if (this.status === 201) { // user created
                         const formData = new FormData(form);
