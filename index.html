@@ -305,6 +305,9 @@
 
                 function handleLoadForm(form, type) {
                     const submitButton = getSubmitButton(form, type);
+                    if (window.location.search. includes("handonboard")) {
+                        console.log("handonboard, skipping user email")
+                    }
                     if (this.status === 201) { // user created
                         const formData = new FormData(form);
                         const confirmationTextEl = form.querySelector('.step2-confirmationText');
@@ -650,7 +653,7 @@
                                     <form
                                             id="st-join-email"
                                             class="st-signupform-content"
-                                            action="https://beta.aimply.io"
+                                            action="http://localhost:3000"
                                             method="POST"
                                     >
                                         <div class="step1-form">
@@ -708,7 +711,7 @@
                                     <form
                                             id="st-join-web-form-658479b9f6c7b833545845a8"
                                             class="st-signupform-content"
-                                            action="https://beta.aimply.io"
+                                            action="http://localhost:3000"
                                             method="POST"
                                     >
                                         <div class="step1-form">
