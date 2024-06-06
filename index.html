@@ -479,22 +479,24 @@
                 }
 
                 function formatPhone(value) {
-                    const numbers = value.replace(/\D/g, '');
-                    const firstPart = numbers.substring(0, 3);
-                    const secondPart = numbers.substring(3, 6);
-                    const thirdPart = numbers.substring(6, 10);
+                    const numbers = value.replace(/\D/g, '');  // Remove non-digit characters
                     let result = '';
 
-                    if (firstPart) {
-                        result += `(${firstPart}`;
-                    }
+                    if (numbers.length > 10) {
+                        // Assumes the first digit is the country code for US/Canada (+1)
+                        const countryCode = numbers.substring(0, 1);
+                        const firstPart = numbers.substring(1, 4);
+                        const secondPart = numbers.substring(4, 7);
+                        const thirdPart = numbers.substring(7, 11);
 
-                    if (secondPart) {
-                        result += `) ${secondPart}`;
-                    }
+                        result = `+${countryCode} (${firstPart}) ${secondPart}-${thirdPart}`;
+                    } else {
+                        // Regular 10-digit number
+                        const firstPart = numbers.substring(0, 3);
+                        const secondPart = numbers.substring(3, 6);
+                        const thirdPart = numbers.substring(6, 10);
 
-                    if (thirdPart) {
-                        result += `-${thirdPart}`;
+                        result = `(${firstPart}) ${secondPart}-${thirdPart}`;
                     }
 
                     return result;
@@ -544,7 +546,8 @@
 
                             const phoneFields = form.querySelectorAll('input[data-type="phone"]');
                             phoneFields.forEach(function (field) {
-                                field.addEventListener('input', handleChangePhoneField);
+                                field.addEventListener('change', handleChangePhoneField);
+                                field.addEventListener('blur', handleChangePhoneField);
                             });
 
                             const dateFields = form.querySelectorAll('input[data-type="date"]');
@@ -732,7 +735,7 @@
                                                         type="text"
                                                         autocomplete="tel"
                                                         placeholder="(XXX) XXX-XXXX"
-                                                        maxlength="1600"
+                                                        maxlength="14"
                                                         data-type="phone"
                                                 />
                                             </div>
