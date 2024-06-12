@@ -47,6 +47,12 @@ header .container {
     margin: 0 auto;
     padding: 1em 0;
 }
+#login-button {
+    padding: 10px;
+    background-color: rgb(93, 93, 255);
+    color: white;
+    border-radius: 8px
+}
 .cta {
     text-align: center;
     font-size: 3.5em;
